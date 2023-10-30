@@ -1,4 +1,4 @@
-package com.lansu.awakening.result;
+package com.lansu.dew.common;
 
 /**
  * 结果码enum
@@ -6,7 +6,7 @@ package com.lansu.awakening.result;
  * @author sulan
  * @date 2023/08/06
  */
-public enum ResultCodeEnum implements ResultCode{
+public enum ResultCodeEnum{
 
     USER_PASSWORD_ERROR(1001,"用户名或密码错误"),
     USER_NOT_FOUND(1002,"用户不存在"),
@@ -22,12 +22,12 @@ public enum ResultCodeEnum implements ResultCode{
     }
 
 
-    @Override
+
     public Integer getCode() {
         return code;
     }
 
-    @Override
+
     public String getMessage() {
         return message;
     }
