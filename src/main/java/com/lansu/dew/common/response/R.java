@@ -1,8 +1,9 @@
-package com.lansu.dew.common;
+package com.lansu.dew.common.response;
 
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.UUID;
 
 /**
  * r
@@ -19,6 +20,7 @@ public class R extends HashMap<String, Object> implements Serializable {
 
     private static final String RESPONSE_DATA = "data";
 
+    private static final String MESSAGE_ID = "messageId";
 
     private R() {
     }
@@ -32,6 +34,7 @@ public class R extends HashMap<String, Object> implements Serializable {
         R r = new R();
         r.put(RESPONSE_CODE, 200);
         r.put(RESPONSE_MESSAGE, "成功");
+        r.put(MESSAGE_ID, UUID.randomUUID());
         return r;
     }
 
@@ -44,6 +47,7 @@ public class R extends HashMap<String, Object> implements Serializable {
         R r = new R();
         r.put(RESPONSE_CODE, 400);
         r.put(RESPONSE_MESSAGE, "系统繁忙！请稍后再试。");
+        r.put(MESSAGE_ID, UUID.randomUUID());
         return r;
     }
 
@@ -52,7 +56,7 @@ public class R extends HashMap<String, Object> implements Serializable {
      *
      * @return {@link R}
      */
-    public static R result(){
+    public static R result() {
         return new R();
     }
 
@@ -90,5 +94,11 @@ public class R extends HashMap<String, Object> implements Serializable {
         this.put(RESPONSE_MESSAGE, code.getMessage());
         return this;
     }
+
+    public R setMessageId(String messageId) {
+        this.put("messageId", messageId);
+        return this;
+    }
+
 
 }

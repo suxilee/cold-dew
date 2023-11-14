@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lansu.dew.mapper.MenuMapper">
+    <resultMap id="BaseResultMap" type="com.lansu.dew.domain.MenuEntity">
+        <id column="menu_id" jdbcType="BIGINT" property="menuId"/>
+        <result column="menu_name" jdbcType="VARCHAR" property="menuName"/>
+        <result column="menu_code" jdbcType="VARCHAR" property="menuCode"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        `menu_id`, `menu_name`, `menu_code`
+    </sql>
+
+</mapper>

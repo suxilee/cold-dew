@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: clod-dew
+  profiles:
+    active: dev
